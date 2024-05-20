@@ -151,7 +151,7 @@ def menu(title, bindings):
 #print everything as upper case if enraged!
 _print = print 
 def print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False):
-    rage = get_from_inventory("R") == 1
+    rage = get_from_inventory("R") >= 1
     if not rage:
         return _print(*objects, sep=sep, end=end,file=file,flush=flush)
     upper_objects = []
