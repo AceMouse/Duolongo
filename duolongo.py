@@ -67,7 +67,7 @@ def play(langs, randomize, mode):
 
         answer_lang = languages[langs[1]]
 
-        print(f"Points: {streak}")
+        print(f"Points: {points}")
         print(f"Streak: {streak}")
         print(f"Translate \"{question}\" to {answer_lang}:")
         answer = input() 
@@ -81,7 +81,7 @@ def play(langs, randomize, mode):
                 streak = 0
                 save_variable(streak_file_name, streak)
             continue
-        print(f"Correct!")
+        print("Correct!")
         for lang in langs:
             del sentances[lang][number]
         streak += 1 
@@ -161,8 +161,7 @@ def print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False):
         except:
             to_add = obj 
         upper_objects += [to_add]
-    upper_objects += ["!"]
-    return _print(*upper_objects, sep=sep, end=end,file=file,flush=flush)
+    return _print(*upper_objects, sep=f"!{sep}", end=end,file=file,flush=flush)
 
 def get_inventory_file_name(item_code):
     return f"inv_{item_code}.txt"
